@@ -1,7 +1,10 @@
 from tkinter import *
 from tkinter import ttk
 import pyperclip as pc
+import os
 
+current_dir = os.path.abspath(os.path.dirname(__file__))    # получаем путь к директории текущего исполняемого файла
+file_path = os.path.join(current_dir, 'Abrakadabrer_icon.ico')           # добавляем к этому пути имя файла
 
 def clicked():
     fraze = txt.get()
@@ -27,7 +30,7 @@ def clicked():
 
 
 root = Tk()
-root.iconbitmap('D:\\PyProj\\Translator\\Abrakadabrer_icon.ico')
+root.iconbitmap(file_path)
 root.title('Abrakadabrer v 1.01')
 root.geometry('400x120')
 lbl = Label(root, text="Введи свою Абру-кадабру...")
